@@ -1,10 +1,12 @@
 package com.edokandoe.tufuteca.LootMarket.model;
 
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -23,7 +25,7 @@ public class Users {
     @Column(nullable = false)
     private String password;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "role_id")
-    private Role role;*/
+    private Role role;
 }
