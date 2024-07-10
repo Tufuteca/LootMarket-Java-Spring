@@ -30,9 +30,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
-
     @Bean
-    public AuthenticationProvider authenticationProvider(){
+    public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
         provider.setUserDetailsService(userDetailsService());
         provider.setPasswordEncoder(passwordEncoder());
@@ -40,22 +39,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/","/authorization","/registration").permitAll()
+                .antMatchers("/", "/authorization", "/registration").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/authorization")
-                .loginProcessingUrl("perform_login")
+                .loginProcessingUrl("/perform_login")
                 .usernameParameter("identifier")
                 .passwordParameter("password")
-                .successHandler((request, response, authentication) -> {
-                    response.sendRedirect("/");
-                })
-                .failureForwardUrl("authorization?error")
+                .successHandler((request, response, authentication) -> response.sendRedirect("/"))
+                .failureForwardUrl("/authorization?error=true")
                 .permitAll()
                 .and()
                 .logout()
@@ -63,8 +60,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .deleteCookies("JSESSIONID")
                 .permitAll();
     }
-
-
-
-
 }
+

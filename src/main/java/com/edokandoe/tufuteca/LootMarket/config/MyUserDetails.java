@@ -21,7 +21,7 @@ public class MyUserDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities(){
         if(user != null && user.getRole() != null){
-            switch (user.getRole().getTitle()){
+            switch (user.getRole().getName()){
                 case "ADMIN":
                     return Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"));
                 case "USER":
