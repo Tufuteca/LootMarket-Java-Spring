@@ -4,7 +4,6 @@ package com.edokandoe.tufuteca.LootMarket.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -26,7 +25,7 @@ public class BlockHistory {
 
     private LocalDate dateUnBlock;
 
-    @ManyToOne
-    @JoinColumn(name = "Users_idUsers")
-    private Users user;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id", nullable = false)
+    private Users users;
 }
