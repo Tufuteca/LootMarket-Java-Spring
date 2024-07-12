@@ -1,10 +1,12 @@
 package com.edokandoe.tufuteca.LootMarket.model;
 
-
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,13 +19,26 @@ public class Users {
     @Column(name = "idUser")
     private Long id;
 
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String login;
 
     @Column(nullable = false)
     private String password;
 
-    /*@ManyToOne
-    @JoinColumn(name = "role_id")
-    private Role role;*/
+    @Column(unique = true, nullable = false)
+    private String email;
+
+    @Column(nullable = false) // Заблокирован ли аккаунт
+    private Boolean Blocked = false;
+
+    @Column(nullable = false) // Активен ли аккаунт
+    private Boolean Enabled = false;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id_role")
+    private Role role;
+
+    @OneToMany(mappedBy = "users", fetch = FetchType.EAGER)
+    @ToString.Exclude
+    private List<BlockHistory> blockHistories; // История блокировок
 }
