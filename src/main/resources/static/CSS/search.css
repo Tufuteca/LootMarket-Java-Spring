@@ -1,0 +1,37 @@
+.search{
+    border-radius:32px;
+}
+.search {
+    background-color: #E9E9E9;
+    padding-left: 35px; /* Увеличенный отступ для иконки */
+    height:49px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #6c757d; /* Цвет иконки, соответствующий теме */
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+
+@media (max-width: 1220px) {
+    .search-container {
+        width: 40%
+    }
+}
+
+@media (min-width: 1220px) {
+    .search-container {
+        width: 70%
+    }
+}
+
