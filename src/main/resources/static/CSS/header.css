@@ -1,73 +1,64 @@
-@media (min-width: 768px) {
-    .theme-checkbox {
-        margin: auto 0;
-    }
+html, body {
+    height: 100%;
+    margin: 0;
+}
 
-    .nav-item img.icon {
-        margin-bottom: 4px;
-    }
+.d-flex {
+    display: flex !important;
+}
 
-    .nav-item a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+.flex-column {
+    flex-direction: column !important;
+}
 
-    .nav-item a span {
+.min-vh-100 {
+    min-height: 100vh !important;
+}
+
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.mt-auto {
+    margin-top: auto !important;
+}
+
+.portableHeader {
+    z-index: 9999;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    border-radius: 32px;
+}
+
+@media (max-width: 992px) {
+    .portableHeader {
+        display: none;
+    }
+    .MobileNav, .mobileHeader {
         display: block;
     }
-
-    .d-flex {
-        display: flex;
-    }
-
-    .justify-content-between {
-        justify-content: space-between;
-    }
-
-    .align-items-center {
-        align-items: center;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    .logo {
-        max-height: 40px; /* Adjust as needed */
-    }
-
-    .search {
-        background-color: #E9E9E9;
-        height: 40px; /* Adjust as needed */
-    }
-
-    .nav-item a img {
-        max-height: 24px; /* Adjust as needed */
-    }
-
-    .nav {
-        list-style: none;
-        padding-left: 0;
-    }
-
-    .nav-item {
-        display: flex;
-        align-items: center;
-        margin-left: 15px;
-    }
-
-    .nav-link {
-        text-decoration: none;
+    .MobileNav {
+        position: fixed;
+        z-index: 9999;
+        bottom: 0;
+        background-color: white;
+        width: 100%;
+        border-top: 1px solid black;
     }
 }
 
-
-@media (max-width:992px){
-    .portableHeader{
-        display:none;
+@media (min-width: 992px) {
+    .MobileNav, .mobileHeader {
+        display: none;
+    }
+    .portableHeader {
+        display: block;
     }
 }
 
-
+.border-black {
+    border-color: black;
+    border-width:0px 0px 0px 0px;
+}

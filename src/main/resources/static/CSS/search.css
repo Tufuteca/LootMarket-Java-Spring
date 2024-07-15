@@ -23,13 +23,18 @@
 }
 
 
-@media (max-width: 1220px) {
+@media (max-width: 1651px) {
     .search-container {
-        width: 40%
+        width: calc(100vw - 40vw);
+    }
+}
+@media (max-width: 1239px) {
+    .search-container {
+        width: calc(100vw - 50vw);
     }
 }
 
-@media (min-width: 1220px) {
+@media (min-width: 1651px) {
     .search-container {
         width: 70%
     }
