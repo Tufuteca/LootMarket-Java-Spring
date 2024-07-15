@@ -1,14 +1,7 @@
 <!-- src/main/resources/templates/blocks/header.html -->
-<div th:fragment="Header">
-    <div class="d-flex flex-wrap align-items-center justify-content-center mt-3 pb-4 pt-4">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-            <img src="/static/icons/LogoLight.svg" alt="Logo">
-        </a>
-        <form class="ms-5 mb-3 mb-lg-0 me-lg-3 search-container" role="search">
-            <input type="search" class="form-control form-control-dark text-bg-dark search w-100" placeholder="Поиск валюты, игр и приложений" aria-label="Search">
-        </form>
-        <input type="checkbox" class="theme-checkbox me-2">
-        <ul class="nav col-12 col-lg-auto mb-2 justify-content-center mb-md-0 align-items-center">
+<div th:fragment="mobileHeader">
+    <div class="d-flex flex-wrap align-items-center justify-content-between border border-black">
+        <ul class="nav mb-2 justify-content-around mb-md-0 align-items-center w-100">
             <li class="nav-item d-flex flex-column align-items-center text-center">
                 <a href="#" class="nav-link px-2 text-secondary d-flex flex-column align-items-center">
                     <img src="/static/icons/Sell.svg" class="mb-1" style="bottom:0"><span>Продать</span>
