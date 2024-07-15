@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+body {
+    font-family: 'IBM Plex Mono', monospace;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.footer a:hover {
+    color: #ccc;
+}
+.payment-icons img {
+    width: 40px;
+    margin-right: 5px; /* Уменьшенный отступ */
+}     
+.social-icons a img {
+    width: 40px;
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Плавная анимация */
+}
+.social-icons a:hover img {
+    transform: scale(1.1); /* Увеличение на 10% при наведении */
+}
+.support-button {
+    background-color: #fff;
+    color: #000 !important; /* Явное указание черного текста */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Плавный ховер эффект */
+    font-weight: bold;
+    white-space: nowrap;
+    margin-top: auto; /* Уравниваем по высоте с иконками соцсетей и способами оплаты */
+}    
+.support-button:hover {
+    background-color: #ccc;
+}      
+.footer h5 {
+    margin: 20px 0 10px 0; /* Верхний отступ для заголовков */
+}       
+.footer .info a {
+    display: inline-block;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+.footer .column {
+    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.footer .column:last-child {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end; /* Новая строка для выравнивания кнопки по правому краю */
+}
+.footer .small-text {
+    color: #aaa;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 40px; /* Увеличенный отступ сверху */
+    width: 100%;
+}
+.footer .info .info-column {
+    display: flex;
+    flex-direction: column;
+}
+.footer .info {
+    display: flex;
+}
+.social-icons, .support-button-container {
+    display: flex;
+    align-items: center;
+}
+.support-button-container {
+    margin-top: auto; /* Выравнивание кнопки по нижнему краю колонки */
+}
+
+/* Медиазапрос для мобильных устройств */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    .footer .column {
+        margin: 0;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px; /* Отступ между блоками */
+    }
+    .footer .column:last-child {
+        align-items: center;
+    }
+    .payment-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .payment-icons img {
+        margin: 5px; /* Уменьшенный отступ */
+    }
+    .info {
+        flex-direction: column;
+        align-items: center;
+    }
+    .info a {
+        margin: 5px 0; /* Отступ между ссылками */
+    }
+    .social-icons {
+        justify-content: center;
+        margin-bottom: 20px; /* Отступ между блоками */
+    }
+    .support-button {
+        width: 100%;
+    }
+}        

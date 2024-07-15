@@ -1,0 +1,12 @@
+.carousel {
+    margin: 25px;
+    border-radius: 29px;
+    overflow: hidden;
+}
+.carousel-inner img {
+    border-radius: 29px;
+}
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Уменьшаем ширину кнопок */
+}
