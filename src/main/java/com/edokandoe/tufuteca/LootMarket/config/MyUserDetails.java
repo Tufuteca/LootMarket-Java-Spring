@@ -24,6 +24,8 @@ public class MyUserDetails implements UserDetails {
             switch (user.getRole().getName()){
                 case "ADMIN":
                     return Arrays.asList(new SimpleGrantedAuthority("ROLE_ADMIN"));
+                case "MODERATOR":
+                    return Arrays.asList(new SimpleGrantedAuthority("ROLE_MODERATOR"));
                 case "USER":
                     return Arrays.asList(new SimpleGrantedAuthority("ROLE_USER"));
                 default:
