@@ -44,7 +44,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/**", "/authorization", "/registration").permitAll()
+                .antMatchers("/", "/authorization", "/registration").permitAll()
+                .antMatchers("/admin-profile").hasRole("ADMIN")
+                .antMatchers("/moderator-profile").hasRole("MODERATOR")
+                .antMatchers("/user-profile").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -68,7 +71,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private String determineRedirectUrl(Authentication authentication) {
         if (authentication.getAuthorities().stream()
                 .anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN"))) {
-            return "/admin-panel";
+            return "/admin-profile";
         } else if (authentication.getAuthorities().stream()
                 .anyMatch(a -> a.getAuthority().equals("ROLE_MODERATOR"))) {
             return "/moderator-profile";
