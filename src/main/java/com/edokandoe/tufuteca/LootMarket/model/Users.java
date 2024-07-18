@@ -25,7 +25,7 @@ public class Users {
     @Column(nullable = false)
     private String password;
 
-    @Column(unique = true, nullable = false)
+    @Column(unique = true)
     private String email;
 
     @Column(nullable = false) // Заблокирован ли аккаунт
