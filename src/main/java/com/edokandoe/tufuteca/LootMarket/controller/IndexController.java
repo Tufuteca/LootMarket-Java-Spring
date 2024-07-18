@@ -23,6 +23,26 @@ public class IndexController {
         return "authorization";
     }
 
+    @GetMapping("/privacy-policy")
+    public String getPrivacyPolicyPage() {
+        return "privacy-policy";
+    }
+
+    @GetMapping("/cookie-policy")
+    public String getCookiePolicyPage() {
+        return "cookie-policy";
+    }
+
+    @GetMapping("/agreement")
+    public String getAgreementPage() {
+        return "agreement";
+    }
+
+    @GetMapping("/sale-terms")
+    public String getSaleTermsPage() {
+        return "sale-terms";
+    }
+
     @GetMapping("/dashboard")
     public String getDashboard() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
