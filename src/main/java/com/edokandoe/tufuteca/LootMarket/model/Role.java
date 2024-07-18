@@ -1,6 +1,7 @@
 package com.edokandoe.tufuteca.LootMarket.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "Role")
 public class Role {
 
     @Id
@@ -20,7 +22,4 @@ public class Role {
 
     @Column(nullable = false, unique = true)
     private String name;
-
-    @OneToMany(mappedBy = "role")
-    private List<Users> users;
 }
